@@ -1,0 +1,38 @@
+# Création de shapefiles dans un zip pour la région {{region}}
+file://{{region}} <- file://{{region}}.osm.pbf
+    mkdir {{region}}
+
+file://{{region}}/places.shp file://{{region}}/places.shx file://{{region}}/places.prj file://{{region}}/places.dbf file://{{region}}/places.cpg <- file://{{region}}.osm.pbf file://{{region}} file://osm_extract/osm_config.ini
+     ogr2ogr -f "ESRI Shapefile" {{region}}/places.shp --config OSM_CONFIG_FILE osm_extract/osm_config.ini -sql "select osm_id, name, place AS "type", population from points where place is not null" -lco ENCODING=UTF-8 {{region}}.osm.pbf
+
+file://{{region}}/roads.shp <- file://{{region}}.osm.pbf file://{{region}} file://osm_extract/osm_config.ini
+    ogr2ogr -f "ESRI Shapefile" {{region}}/roads.shp --config OSM_CONFIG_FILE osm_extract/osm_config.ini -sql "select osm_id, name, highway AS "type", CAST(oneway AS integer) + 1 AS "oneway", CAST(bridge AS integer) + 1 AS bridge, CAST(tunnel AS integer) + 1 AS tunnel, CAST(maxspeed AS integer) + 1 AS maxspeed from lines where highway is not null" -lco ENCODING=UTF-8 {{region}}.osm.pbf
+    
+file://{{region}}/buildings.shp file://{{region}}/buildings.shx file://{{region}}/buildings.prj file://{{region}}/buildings.dbf file://{{region}}/buildings.cpg <- file://{{region}}.osm.pbf file://{{region}} file://osm_extract/osm_config.ini
+    ogr2ogr -f "ESRI Shapefile" {{region}}/buildings.shp --config OSM_CONFIG_FILE osm_extract/osm_config.ini -sql "select osm_id, name, building AS "type" from multipolygons where building is not null" -lco ENCODING=UTF-8 {{region}}.osm.pbf
+
+file://{{region}}/railways.shp file://{{region}}/railways.shx file://{{region}}/railways.prj file://{{region}}/railways.dbf file://{{region}}/railways.cpg <- file://{{region}}.osm.pbf file://{{region}} file://osm_extract/osm_config.ini
+    ogr2ogr -f "ESRI Shapefile" {{region}}/railways.shp --config OSM_CONFIG_FILE osm_extract/osm_config.ini -sql "select osm_id, name, railway AS "type", width from lines where railway is not null" -lco ENCODING=UTF-8 {{region}}.osm.pbf
+
+file://{{region}}/waterways.shp file://{{region}}/waterways.shx file://{{region}}/waterways.prj file://{{region}}/waterways.dbf file://{{region}}/waterways.cpg <- file://{{region}}.osm.pbf file://{{region}} file://osm_extract/osm_config.ini
+    ogr2ogr -f "ESRI Shapefile" {{region}}/waterways.shp --config OSM_CONFIG_FILE osm_extract/osm_config.ini -sql "select osm_id, name, waterway AS "type", width from lines where waterway is not null" -lco ENCODING=UTF-8 {{region}}.osm.pbf
+
+file://{{region}}/points.shp file://{{region}}/points.shx file://{{region}}/points.prj file://{{region}}/points.dbf file://{{region}}/points.cpg <- file://{{region}}.osm.pbf file://{{region}} file://osm_extract/osm_config.ini
+    ogr2ogr -f "ESRI Shapefile" {{region}}/points.shp --config OSM_CONFIG_FILE osm_extract/osm_config.ini -dialect SQLITE -sql "select osm_id, GEOMETRY, name, coalesce(REPLACE(highway,'yes','highway'), REPLACE(man_made,'yes','man_made'), REPLACE(amenity,'yes','amenity'), REPLACE(shop,'yes','shop'), REPLACE(tourism,'yes','tourism'), REPLACE(railway,'yes','railway'), REPLACE(historic,'yes','historic'), REPLACE(office,'yes','office'), REPLACE(craft,'yes','craft')) AS type FROM points WHERE highway is not null OR man_made is not null OR amenity is not null OR shop is not null OR tourism is not null OR railway is not null OR historic is not null OR office is not null OR craft is not null" -lco ENCODING=UTF-8 {{region}}.osm.pbf
+
+file://{{region}}/natural.shp file://{{region}}/natural.shx file://{{region}}/natural.prj file://{{region}}/natural.dbf file://{{region}}/natural.cpg <- file://{{region}}.osm.pbf file://{{region}} file://osm_extract/osm_config.ini
+    ogr2ogr -f "ESRI Shapefile" {{region}}/natural.shp --config OSM_CONFIG_FILE osm_extract/osm_config.ini -dialect SQLITE -sql "select osm_id, GEOMETRY, name, coalesce(waterway,leisure,landuse,REPLACE(natural,'wood','forest')) AS "type" from multipolygons where waterway is not null or leisure='park' or landuse='forest' or landuse='park' or natural='wood' or natural='water'" -lco ENCODING=UTF-8 {{region}}.osm.pbf
+
+file://{{region}}/landuse.shp file://{{region}}/landuse.shx file://{{region}}/landuse.prj file://{{region}}/landuse.dbf file://{{region}}/landuse.cpg <- file://{{region}}.osm.pbf file://{{region}} file://osm_extract/osm_config.ini
+    ogr2ogr -f "ESRI Shapefile" {{region}}/landuse.shp --config OSM_CONFIG_FILE osm_extract/osm_config.ini -sql "select osm_id, name, landuse AS "type" from multipolygons where landuse is not null" -lco ENCODING=UTF-8 {{region}}.osm.pbf
+
+# A ce jour on ne peut pas imédiatement selectionner tous les départements d'une region
+#file://{{region}}/admin-departement.shp file://{{region}}/admin-departement.shx file://{{region}}/admin-departement.prj file://{{region}}/admin-departement.dbf <- file://{{region}} file://departements
+#    ogr2ogr -f "ESRI Shapefile" {{region}}/admin-departement.shp -where "code_insee='{num}}'" departements/departements.shp
+
+file://{{region}}/region.qgs <- file://region.qgs file://{{region}}
+    cp departement.qgs {{region}}/region.qgs
+
+file://{{region}}.zip <- file://zips file://{{region}}/region.qgs file://{{region}}/places.shp file://{{region}}/roads.shp file://{{region}}/buildings.shp file://{{region}}/railways.shp file://{{region}}/waterways.shp file://{{region}}/points.shp file://{{region}}/natural.shp file://{{region}}/landuse.shp
+    zip -r zips/{{region}}.zip {{region}}
+

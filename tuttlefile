@@ -61,10 +61,17 @@ file://osmosis <- file://osmosis-latest.tgz
     tar xvfz ../osmosis-latest.tgz
     chmod a+x bin/osmosis
 
-#file://planet-latest.osm.pbf <- https://planet.osm.org/pbf/planet-latest.osm.pbf ! download
+file://planet-latest.osm.pbf <- https://planet.osm.org/pbf/planet-latest.osm.pbf ! download
+
+file://zips <-
+    mkdir zips
 
 |<<
     NOUVELLES_REGIONS="guadeloupe martinique guyane reunion mayotte ile-de-france pays-de-la-loire bretagne provence-alpes-cote-d-azur corse centre-val-de-loire bourgogne-franche-comte normandie hauts-de-france grand-est nouvelle-aquitaine occitanie auvergne-rhone-alpes"
     tuttle-extend-workflow extraire_regions.tuttle regions[]=$NOUVELLES_REGIONS
+    for REGION in $NOUVELLES_REGIONS
+    do
+        tuttle-extend-workflow -n region_$REGION process_region_X.tuttle region="$REGION"
+    done
 
 
