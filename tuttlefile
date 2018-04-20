@@ -43,7 +43,7 @@ file://build/grand-est.poly <- file://build/lorraine.poly file://build/alsace.po
     ./merge_polys.py build/lorraine.poly build/alsace.poly build/champagne-ardenne.poly > build/rand-est.poly
 
 file://build/nouvelle-aquitaine.poly <- file://build/aquitaine.poly file://build/poitou-charentes.poly file://build/limousin.poly file://merge_polys.py
-    ./merge_polys.py build/quitaine.poly build/poitou-charentes.poly build/limousin.poly > build/nouvelle-aquitaine.poly
+    ./merge_polys.py build/aquitaine.poly build/poitou-charentes.poly build/limousin.poly > build/nouvelle-aquitaine.poly
 
 file://build/occitanie.poly <- file://build/midi-pyrenees.poly file://build/languedoc-roussillon.poly file://merge_polys.py
     ./merge_polys.py build/midi-pyrenees.poly build/languedoc-roussillon.poly > build/occitanie.poly
