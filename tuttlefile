@@ -1,55 +1,55 @@
-file://guadeloupe.poly <- http://download.geofabrik.de/europe/france/guadeloupe.poly ! download 
-file://martinique.poly <- http://download.geofabrik.de/europe/france/martinique.poly ! download 
-file://guyane.poly <- http://download.geofabrik.de/europe/france/guyane.poly ! download 
-file://reunion.poly <- http://download.geofabrik.de/europe/france/reunion.poly ! download 
-file://mayotte.poly <- http://download.geofabrik.de/europe/france/mayotte.poly ! download 
-file://ile-de-france.poly <- http://download.geofabrik.de/europe/france/ile-de-france.poly ! download 
-file://bourgogne.poly <- http://download.geofabrik.de/europe/france/bourgogne.poly ! download 
-file://franche-comte.poly <- http://download.geofabrik.de/europe/france/franche-comte.poly ! download 
-file://haute-normandie.poly <- http://download.geofabrik.de/europe/france/haute-normandie.poly ! download 
-file://basse-normandie.poly <- http://download.geofabrik.de/europe/france/basse-normandie.poly ! download 
-file://nord-pas-de-calais.poly <- http://download.geofabrik.de/europe/france/nord-pas-de-calais.poly ! download 
-file://picardie.poly <- http://download.geofabrik.de/europe/france/picardie.poly ! download 
-file://lorraine.poly <- http://download.geofabrik.de/europe/france/lorraine.poly ! download 
-file://alsace.poly <- http://download.geofabrik.de/europe/france/alsace.poly ! download 
-file://champagne-ardenne.poly <- http://download.geofabrik.de/europe/france/champagne-ardenne.poly ! download 
-file://pays-de-la-loire.poly <- http://download.geofabrik.de/europe/france/pays-de-la-loire.poly ! download 
-file://bretagne.poly <- http://download.geofabrik.de/europe/france/bretagne.poly ! download 
-file://aquitaine.poly <- http://download.geofabrik.de/europe/france/aquitaine.poly ! download 
-file://poitou-charentes.poly <- http://download.geofabrik.de/europe/france/poitou-charentes.poly ! download 
-file://limousin.poly <- http://download.geofabrik.de/europe/france/limousin.poly ! download 
-file://midi-pyrenees.poly <- http://download.geofabrik.de/europe/france/midi-pyrenees.poly ! download 
-file://languedoc-roussillon.poly <- http://download.geofabrik.de/europe/france/languedoc-roussillon.poly ! download 
-file://rhone-alpes.poly <- http://download.geofabrik.de/europe/france/rhone-alpes.poly ! download 
-file://auvergne.poly <- http://download.geofabrik.de/europe/france/auvergne.poly ! download 
-file://provence-alpes-cote-d-azur.poly <- http://download.geofabrik.de/europe/france/provence-alpes-cote-d-azur.poly ! download 
-file://corse.poly <- http://download.geofabrik.de/europe/france/corse.poly ! download 
+file://build/guadeloupe.poly <- file://build http://download.geofabrik.de/europe/france/guadeloupe.poly ! download 
+file://build/martinique.poly <- file://build  http://download.geofabrik.de/europe/france/martinique.poly ! download 
+file://build/guyane.poly <- file://build http://download.geofabrik.de/europe/france/guyane.poly ! download 
+file://build/reunion.poly <- file://build http://download.geofabrik.de/europe/france/reunion.poly ! download 
+file://build/mayotte.poly <- file://build http://download.geofabrik.de/europe/france/mayotte.poly ! download 
+file://build/ile-de-france.poly <- file://build http://download.geofabrik.de/europe/france/ile-de-france.poly ! download 
+file://build/bourgogne.poly <- file://build http://download.geofabrik.de/europe/france/bourgogne.poly ! download 
+file://build/franche-comte.poly <- file://build http://download.geofabrik.de/europe/france/franche-comte.poly ! download 
+file://build/haute-normandie.poly <- file://build http://download.geofabrik.de/europe/france/haute-normandie.poly ! download 
+file://build/basse-normandie.poly <- file://build http://download.geofabrik.de/europe/france/basse-normandie.poly ! download 
+file://build/nord-pas-de-calais.poly <- file://build http://download.geofabrik.de/europe/france/nord-pas-de-calais.poly ! download 
+file://build/picardie.poly <- file://build http://download.geofabrik.de/europe/france/picardie.poly ! download 
+file://build/lorraine.poly <- file://build http://download.geofabrik.de/europe/france/lorraine.poly ! download 
+file://build/alsace.poly <- file://build http://download.geofabrik.de/europe/france/alsace.poly ! download 
+file://build/champagne-ardenne.poly <- file://build http://download.geofabrik.de/europe/france/champagne-ardenne.poly ! download 
+file://build/pays-de-la-loire.poly <- file://build http://download.geofabrik.de/europe/france/pays-de-la-loire.poly ! download 
+file://build/bretagne.poly <- file://build http://download.geofabrik.de/europe/france/bretagne.poly ! download 
+file://build/aquitaine.poly <- file://build http://download.geofabrik.de/europe/france/aquitaine.poly ! download 
+file://build/poitou-charentes.poly <- file://build http://download.geofabrik.de/europe/france/poitou-charentes.poly ! download 
+file://build/limousin.poly <- file://build http://download.geofabrik.de/europe/france/limousin.poly ! download 
+file://build/midi-pyrenees.poly <- file://build http://download.geofabrik.de/europe/france/midi-pyrenees.poly ! download 
+file://build/languedoc-roussillon.poly <- file://build http://download.geofabrik.de/europe/france/languedoc-roussillon.poly ! download 
+file://build/rhone-alpes.poly <- file://build http://download.geofabrik.de/europe/france/rhone-alpes.poly ! download 
+file://build/auvergne.poly <- file://build http://download.geofabrik.de/europe/france/auvergne.poly ! download 
+file://build/provence-alpes-cote-d-azur.poly <- file://build http://download.geofabrik.de/europe/france/provence-alpes-cote-d-azur.poly ! download 
+file://build/corse.poly <- file://build http://download.geofabrik.de/europe/france/corse.poly ! download 
 
 # La région Centre est devenue Centre-Val de Loire !
-file://centre-val-de-loire.poly <- http://download.geofabrik.de/europe/france/centre.poly ! download 
+file://build/centre-val-de-loire.poly <- file://build http://download.geofabrik.de/europe/france/centre.poly ! download 
 
 # Les nouvelles régions correspondent à des fusions des anciennes :
 
-file://bourgogne-franche-comte.poly <- file://bourgogne.poly file://franche-comte.poly file://merge_polys.py
-    ./merge_polys.py bourgogne.poly franche-comte.poly > bourgogne-franche-comte.poly
+file://build/bourgogne-franche-comte.poly <- file://build/bourgogne.poly file://build/franche-comte.poly file://merge_polys.py
+    ./merge_polys.py build/bourgogne.poly build/franche-comte.poly > build/bourgogne-franche-comte.poly
     
-file://normandie.poly <- file://basse-normandie.poly file://haute-normandie.poly file://merge_polys.py
-    ./merge_polys.py basse-normandie.poly haute-normandie.poly > normandie.poly
+file://build/normandie.poly <- file://build/basse-normandie.poly file://build/haute-normandie.poly file://merge_polys.py
+    ./merge_polys.py build/basse-normandie.poly build/haute-normandie.poly > build/normandie.poly
 
-file://hauts-de-france.poly <- file://nord-pas-de-calais.poly file://picardie.poly file://merge_polys.py
-    ./merge_polys.py nord-pas-de-calais.poly picardie.poly > hauts-de-france.poly
+file://build/hauts-de-france.poly <- file://build/nord-pas-de-calais.poly file://build/picardie.poly file://merge_polys.py
+    ./merge_polys.py build/nord-pas-de-calais.polybuild/picardie.poly > build/hauts-de-france.poly
 
-file://grand-est.poly <- file://lorraine.poly file://alsace.poly file://champagne-ardenne.poly file://merge_polys.py
-    ./merge_polys.py lorraine.poly alsace.poly champagne-ardenne.poly > grand-est.poly
+file://build/grand-est.poly <- file://build/lorraine.poly file://build/alsace.poly file://build/champagne-ardenne.poly file://merge_polys.py
+    ./merge_polys.py build/lorraine.poly build/alsace.poly build/champagne-ardenne.poly > build/rand-est.poly
 
-file://nouvelle-aquitaine.poly <- file://aquitaine.poly file://poitou-charentes.poly file://limousin.poly file://merge_polys.py
-    ./merge_polys.py aquitaine.poly poitou-charentes.poly limousin.poly > nouvelle-aquitaine.poly
+file://build/nouvelle-aquitaine.poly <- file://build/aquitaine.poly file://build/poitou-charentes.poly file://build/limousin.poly file://merge_polys.py
+    ./merge_polys.py build/quitaine.poly build/poitou-charentes.poly build/limousin.poly > build/nouvelle-aquitaine.poly
 
-file://occitanie.poly <- file://midi-pyrenees.poly file://languedoc-roussillon.poly file://merge_polys.py
-    ./merge_polys.py midi-pyrenees.poly languedoc-roussillon.poly > occitanie.poly
+file://build/occitanie.poly <- file://build/midi-pyrenees.poly file://build/languedoc-roussillon.poly file://merge_polys.py
+    ./merge_polys.py build/midi-pyrenees.poly build/languedoc-roussillon.poly > build/occitanie.poly
 
-file://auvergne-rhone-alpes.poly <- file://rhone-alpes.poly file://auvergne.poly file://merge_polys.py
-    ./merge_polys.py rhone-alpes.poly auvergne.poly > auvergne-rhone-alpes.poly
+file://build/auvergne-rhone-alpes.poly <- file://build/rhone-alpes.poly file://build/auvergne.poly file://merge_polys.py
+    ./merge_polys.py build/rhone-alpes.poly build/auvergne.poly > build/auvergne-rhone-alpes.poly
 
 
 # Téléchargment de l'outil traitement d'OSM
@@ -61,15 +61,26 @@ file://osmosis <- file://osmosis-latest.tgz
     tar xvfz ../osmosis-latest.tgz
     chmod a+x bin/osmosis
 
-file://planet-latest.osm.pbf <- https://planet.osm.org/pbf/planet-latest.osm.pbf ! download
+file://build/planet-latest.osm.pbf <- file://build https://planet.osm.org/pbf/planet-latest.osm.pbf ! download
 
-file://zips <-
-    mkdir zips
+file://build <-
+    mkdir build
+
+file://dist/europe/france <-
+    mkdir -p dist/europe/france
 
 |<<
-    NOUVELLES_REGIONS="guadeloupe martinique guyane reunion mayotte ile-de-france pays-de-la-loire bretagne provence-alpes-cote-d-azur corse centre-val-de-loire bourgogne-franche-comte normandie hauts-de-france grand-est nouvelle-aquitaine occitanie auvergne-rhone-alpes"
-    tuttle-extend-workflow extraire_regions.tuttle regions[]=$NOUVELLES_REGIONS
-    for REGION in $NOUVELLES_REGIONS
+    NOUVELLES_REGIONS1="guadeloupe martinique guyane reunion"
+    NOUVELLES_REGIONS2="mayotte ile-de-france pays-de-la-loire bretagne"
+    NOUVELLES_REGIONS3="provence-alpes-cote-d-azur corse centre-val-de-loire bourgogne-franche-comte"
+    NOUVELLES_REGIONS4="normandie hauts-de-france grand-est"
+    NOUVELLES_REGIONS5="nouvelle-aquitaine occitanie auvergne-rhone-alpes"
+    tuttle-extend-workflow extraire_regions.tuttle regions[]=$NOUVELLES_REGIONS1
+    tuttle-extend-workflow extraire_regions.tuttle regions[]=$NOUVELLES_REGIONS2
+    tuttle-extend-workflow extraire_regions.tuttle regions[]=$NOUVELLES_REGIONS3
+    tuttle-extend-workflow extraire_regions.tuttle regions[]=$NOUVELLES_REGIONS4
+    tuttle-extend-workflow extraire_regions.tuttle regions[]=$NOUVELLES_REGIONS5
+    for REGION in $NOUVELLES_REGIONS1 $NOUVELLES_REGIONS2 $NOUVELLES_REGIONS3 $NOUVELLES_REGIONS4 $NOUVELLES_REGIONS5
     do
         tuttle-extend-workflow -n region_$REGION process_region_X.tuttle region="$REGION"
     done

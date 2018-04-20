@@ -33,6 +33,6 @@ file://{{region}}/landuse.shp file://{{region}}/landuse.shx file://{{region}}/la
 file://{{region}}/region.qgs <- file://region.qgs file://{{region}}
     cp departement.qgs {{region}}/region.qgs
 
-file://{{region}}.zip <- file://zips file://{{region}}/region.qgs file://{{region}}/places.shp file://{{region}}/roads.shp file://{{region}}/buildings.shp file://{{region}}/railways.shp file://{{region}}/waterways.shp file://{{region}}/points.shp file://{{region}}/natural.shp file://{{region}}/landuse.shp
-    zip -r zips/{{region}}.zip {{region}}
+file://dist/europe/france/{{region}}.zip <- file://dist/europe/france file://{{region}}/region.qgs file://{{region}}/places.shp file://{{region}}/roads.shp file://{{region}}/buildings.shp file://{{region}}/railways.shp file://{{region}}/waterways.shp file://{{region}}/points.shp file://{{region}}/natural.shp file://{{region}}/landuse.shp
+    zip -r dist/europe/france/{{region}}.zip {{region}}
 
