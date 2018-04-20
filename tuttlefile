@@ -37,7 +37,7 @@ file://build/normandie.poly <- file://build/basse-normandie.poly file://build/ha
     ./merge_polys.py build/basse-normandie.poly build/haute-normandie.poly > build/normandie.poly
 
 file://build/hauts-de-france.poly <- file://build/nord-pas-de-calais.poly file://build/picardie.poly file://merge_polys.py
-    ./merge_polys.py build/nord-pas-de-calais.polybuild/picardie.poly > build/hauts-de-france.poly
+    ./merge_polys.py build/nord-pas-de-calais.poly build/picardie.poly > build/hauts-de-france.poly
 
 file://build/grand-est.poly <- file://build/lorraine.poly file://build/alsace.poly file://build/champagne-ardenne.poly file://merge_polys.py
     ./merge_polys.py build/lorraine.poly build/alsace.poly build/champagne-ardenne.poly > build/rand-est.poly
