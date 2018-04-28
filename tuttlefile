@@ -75,12 +75,12 @@ file://dist/europe/france <-
     NOUVELLES_REGIONS3="provence-alpes-cote-d-azur corse centre-val-de-loire bourgogne-franche-comte"
     NOUVELLES_REGIONS4="normandie hauts-de-france grand-est"
     NOUVELLES_REGIONS5="nouvelle-aquitaine occitanie auvergne-rhone-alpes"
-    tuttle-extend-workflow extraire_regions.tuttle regions[]=$NOUVELLES_REGIONS1
-    tuttle-extend-workflow extraire_regions.tuttle regions[]=$NOUVELLES_REGIONS2
-    tuttle-extend-workflow extraire_regions.tuttle regions[]=$NOUVELLES_REGIONS3
-    tuttle-extend-workflow extraire_regions.tuttle regions[]=$NOUVELLES_REGIONS4
-    tuttle-extend-workflow extraire_regions.tuttle regions[]=$NOUVELLES_REGIONS5
-    for REGION in $NOUVELLES_REGIONS1 $NOUVELLES_REGIONS2 $NOUVELLES_REGIONS3 $NOUVELLES_REGIONS4 $NOUVELLES_REGIONS5
+    tuttle-extend-workflow extraire_regions.tuttle regions[]=$NOUVELLES_REGIONS_1
+    tuttle-extend-workflow extraire_regions.tuttle regions[]=$NOUVELLES_REGIONS_2
+    tuttle-extend-workflow extraire_regions.tuttle regions[]=$NOUVELLES_REGIONS_3
+    tuttle-extend-workflow extraire_regions.tuttle regions[]=$NOUVELLES_REGIONS_4
+    tuttle-extend-workflow extraire_regions.tuttle regions[]=$NOUVELLES_REGIONS_5
+    for REGION in $NOUVELLES_REGIONS_1 $NOUVELLES_REGIONS_2 $NOUVELLES_REGIONS_3 $NOUVELLES_REGIONS_4 $NOUVELLES_REGIONS_5
     do
         tuttle-extend-workflow -n region_$REGION process_region_X.tuttle region="$REGION"
     done
