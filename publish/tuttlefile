@@ -1,0 +1,10 @@
+|<<
+    NOUVELLES_REGIONS_1="guadeloupe martinique guyane reunion"
+    NOUVELLES_REGIONS_2="mayotte ile-de-france pays-de-la-loire bretagne"
+    NOUVELLES_REGIONS_3="provence-alpes-cote-d-azur corse centre-val-de-loire bourgogne-franche-comte"
+    NOUVELLES_REGIONS_4="normandie hauts-de-france grand-est"
+    NOUVELLES_REGIONS_5="nouvelle-aquitaine occitanie auvergne-rhone-alpes"
+    for REGION in $NOUVELLES_REGIONS_1 $NOUVELLES_REGIONS_2 $NOUVELLES_REGIONS_3 $NOUVELLES_REGIONS_4 $NOUVELLES_REGIONS_5
+    do
+        tuttle-extend-workflow -n region_$REGION publish_region.tuttle region="$REGION"
+    done
