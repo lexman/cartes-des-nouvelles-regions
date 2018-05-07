@@ -1,3 +1,6 @@
+<-
+    echo $HOME
+
 |<<
     NOUVELLES_REGIONS_1="guadeloupe martinique guyane reunion"
     NOUVELLES_REGIONS_2="mayotte ile-de-france pays-de-la-loire bretagne"
