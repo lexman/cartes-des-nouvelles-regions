@@ -5,7 +5,7 @@ ftp://ftp.online.net/opendata/europe/france/{{region}}.poly <- file://../build/{
     curl --ftp-create-dirs -n -T "../build/{{region}}.poly" ftp://ftp.online.net/opendata/europe/france/
 
 # En plus de publier le zip, il faut appeler l'API de data.gouv.fr pour lui signifier qu'on a mis à jour la donnée
-<- file://{{region}}.json http://opendata.lexman.net/{{region}}.zip
+<- file://{{region}}.json http://opendata.lexman.net/europe/france/{{region}}.zip
     RESOURCE=$(python -c "import sys, json; f=open('{{region}}.json'); print(json.load(f)['id'])")
     http PUT 'https://www.data.gouv.fr/api/1/datasets/5ae791ac88ee386d490d3e0a/resources/$RESOURCE/' X-API-KEY:$API_KEY < {{region}}.json
 
