@@ -2,11 +2,32 @@
     import urllib2
     import json
 
+    REGIONS = """guadeloupe,Guadeloupe
+    martinique,Martinique
+    guyane,Guyane
+    reunion,La Réunion
+    mayotte,Mayotte
+    ile-de-france,Île-de-France
+    centre-val-de-loire,Centre-Val de Loire
+    bourgogne-franche-comte,Bourgogne-Franche-Comté
+    normandie,Normandie
+    hauts-de-france,Hauts-de-France
+    grand-est,Grand Est
+    pays-de-la-loire,Pays de la Loire
+    bretagne,Bretagne
+    nouvelle-aquitaine,Nouvelle-Aquitaine
+    occitanie,Occitanie
+    auvergne-rhone-alpes,Auvergne-Rhône-Alpes
+    provence-alpes-cote-d-azur,Provence-Alpes-Côte d'Azur
+    corse,Corse""".split("\n")
+    matching = {region, id for region, id in reg_match.split(',') for reg in REGIONS}
+
     dataset_url = 'https://www.data.gouv.fr/api/1/datasets/5ae791ac88ee386d490d3e0a/'
     response = open("dataset.json")
     doc = json.load(response)
     for resource in doc['resources']:
-        region = resource['name']
-        fname = "{}.json".format(res_name)
+        region = resource['title']
+        id = matching[region]
+        fname = "{}.json".format(id)
         with open(fname, 'w') as f:
             f.write(json.dumps(resource))
