@@ -1,4 +1,4 @@
-http://opendata.lexman.net/{{region}}.zip <- file://../dist/europe/france/{{region}}.zip
+http://opendata.lexman.net/europe/france/{{region}}.zip <- file://../dist/europe/france/{{region}}.zip
     curl --ftp-create-dirs -n -T "../dist/europe/france/{{region}}.zip" ftp://ftp.online.net/opendata/europe/france/
 
 ftp://ftp.online.net/opendata/europe/france/{{region}}.poly <- file://../build/{{region}}.poly
