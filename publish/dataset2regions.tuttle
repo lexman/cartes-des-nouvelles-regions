@@ -2,7 +2,7 @@
     import urllib2
     import json
 
-    REGIONS = """guadeloupe,Guadeloupe
+    REGIONS = u"""guadeloupe,Guadeloupe
     martinique,Martinique
     guyane,Guyane
     reunion,La Réunion
