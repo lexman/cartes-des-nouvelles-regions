@@ -1,10 +1,4 @@
 |<<
-    echo "On peut accéder au netrc ?"    
-    echo $HOME
-    env
-    curl --ftp-create-dirs -n -T "../dist/europe/france/normandie.zip" ftp://ftp.online.net/opendata/europe/france/
-
-|<<
     NOUVELLES_REGIONS_1="guadeloupe martinique guyane reunion"
     NOUVELLES_REGIONS_2="mayotte ile-de-france pays-de-la-loire bretagne"
     NOUVELLES_REGIONS_3="provence-alpes-cote-d-azur corse centre-val-de-loire bourgogne-franche-comte"
