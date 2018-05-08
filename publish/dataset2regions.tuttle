@@ -20,7 +20,8 @@
     auvergne-rhone-alpes,Auvergne-Rhône-Alpes
     provence-alpes-cote-d-azur,Provence-Alpes-Côte d'Azur
     corse,Corse""".split("\n")
-    matching = {region, id for region, id in reg_match.split(',') for reg in REGIONS}
+    m_l = [reg_match.split(',') for reg_match in REGIONS]
+    matching = {region : id for region, id in m_l}
 
     dataset_url = 'https://www.data.gouv.fr/api/1/datasets/5ae791ac88ee386d490d3e0a/'
     response = open("dataset.json")
