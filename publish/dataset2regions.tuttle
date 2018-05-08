@@ -1,0 +1,12 @@
+{% for region in regions %} file://{{region}}.json  {% endfor %} <- file://dataset.json ! python
+    import urllib2
+    import json
+
+    dataset_url = 'https://www.data.gouv.fr/api/1/datasets/5ae791ac88ee386d490d3e0a/'
+    response = open("dataset.json")
+    doc = json.load(response)
+    for resource in doc['resources']:
+        region = resource['name']
+        fname = "{}.json".format(res_name)
+        with open(fname, 'w') as f:
+            f.write(json.dumps(resource))
