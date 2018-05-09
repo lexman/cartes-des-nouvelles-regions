@@ -21,7 +21,7 @@
     provence-alpes-cote-d-azur,Provence-Alpes-Côte d'Azur
     corse,Corse""".split("\n")
     m_l = [reg_match.split(',') for reg_match in REGIONS]
-    matching = {region : id for region, id in m_l}
+    matching = {region : id for id, region in m_l}
 
     dataset_url = 'https://www.data.gouv.fr/api/1/datasets/5ae791ac88ee386d490d3e0a/'
     response = open("dataset.json")
