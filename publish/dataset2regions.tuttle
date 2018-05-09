@@ -28,7 +28,8 @@
     doc = json.load(response)
     for resource in doc['resources']:
         region = resource['title']
-        id = matching[region]
-        fname = "{}.json".format(id)
-        with open(fname, 'w') as f:
-            f.write(json.dumps(resource))
+        if region in matching:
+            id = matching[region]
+            fname = "{}.json".format(id)
+            with open(fname, 'w') as f:
+                f.write(json.dumps(resource))
