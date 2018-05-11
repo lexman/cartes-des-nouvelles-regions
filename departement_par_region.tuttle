@@ -1,0 +1,10 @@
+{% for region in regions %}file://{{region}}.deps {% endfor %} <- file://depts2018.txt file://regions.csv ! python
+    with open('regions.csv') as fregions:
+        regions = [line.strip().split(',') for line in fregions]
+    with open('depts2018.txt') as fdeps:
+        fdeps.readline()
+        deps = [line.strip().split('\t') for line in fdeps]
+    for id_region, _, code_region in regions:
+        with open('{}.deps'.format(id_region), 'w') as f:
+            dep_codes = [dep for region, dep, _ , _, _, _ in deps if region == code_region]
+            f.write(" ".join(dep_codes))

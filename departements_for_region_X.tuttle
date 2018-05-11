@@ -1,0 +1,7 @@
+file://{{region}}/admin-departement.shp file://{{region}}/admin-departement.shx file://{{region}}/admin-departement.prj file://{{region}}/admin-departement.dbf <- file://{{region}} file://departements file://{{region}}.deps    
+    where="0"
+    for dep in $(cat {{region}}.deps)
+    do
+        where="$where OR code_insee='$dep'"
+    done
+    ogr2ogr -f "ESRI Shapefile" {{region}}/admin-departement.shp -where "$where" departements/departements.shp

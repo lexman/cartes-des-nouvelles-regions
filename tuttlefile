@@ -69,6 +69,23 @@ file://build <-
 file://dist/europe/france <-
     mkdir -p dist/europe/france
 
+file://departements-shp.zip <- http://osm13.openstreetmap.fr/~cquest/openfla/export/departements-20140306-5m-shp.zip ! download
+
+file://departements <- file://departements-shp.zip
+    mkdir departements
+    cd departements
+    unzip ../departements-shp.zip
+    mv departements-*.cpg departements.cpg
+    mv departements-*.dbf departements.dbf
+    mv departements-*.prj departements.prj
+    mv departements-*.shp departements.shp
+    mv departements-*.shx departements.shx
+
+file://depts2018-txt.zip <- https://www.insee.fr/fr/statistiques/fichier/3363419/depts2018-txt.zip ! download
+
+file://depts2018.txt <- file://depts2018-txt.zip
+    unzip depts2018-txt.zip
+
 |<<
     NOUVELLES_REGIONS_1="guadeloupe martinique guyane reunion"
     NOUVELLES_REGIONS_2="mayotte ile-de-france pays-de-la-loire bretagne"
@@ -80,9 +97,12 @@ file://dist/europe/france <-
     tuttle-extend-workflow extraire_regions.tuttle regions[]=$NOUVELLES_REGIONS_3
     tuttle-extend-workflow extraire_regions.tuttle regions[]=$NOUVELLES_REGIONS_4
     tuttle-extend-workflow extraire_regions.tuttle regions[]=$NOUVELLES_REGIONS_5
-    for REGION in $NOUVELLES_REGIONS_1 $NOUVELLES_REGIONS_2 $NOUVELLES_REGIONS_3 $NOUVELLES_REGIONS_4 $NOUVELLES_REGIONS_5
+    NOUVELLES_REGIONS_TOUTES="$NOUVELLES_REGIONS_1 $NOUVELLES_REGIONS_2 $NOUVELLES_REGIONS_3 $NOUVELLES_REGIONS_4 $NOUVELLES_REGIONS_5"
+    for REGION in $NOUVELLES_REGIONS_TOUTES
     do
         tuttle-extend-workflow -n region_$REGION process_region_X.tuttle region="$REGION"
+        tuttle-extend-workflow -n departements_for_region_$REGION departements_for_region_X.tuttle region="$REGION"
     done
+    tuttle-extend-workflow -n departement_par_region departement_par_region.tuttle regions[]=$NOUVELLES_REGIONS_TOUTES
 
 
