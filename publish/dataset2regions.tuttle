@@ -1,27 +1,12 @@
 {% for region in regions %} file://{{region}}.json  {% endfor %} <- file://dataset.json ! python
     import urllib2
     import json
+    import datetime
 
-    REGIONS = u"""guadeloupe,Guadeloupe
-    martinique,Martinique
-    guyane,Guyane
-    reunion,La Réunion
-    mayotte,Mayotte
-    ile-de-france,Île-de-France
-    centre-val-de-loire,Centre-Val de Loire
-    bourgogne-franche-comte,Bourgogne-Franche-Comté
-    normandie,Normandie
-    hauts-de-france,Hauts-de-France
-    grand-est,Grand Est
-    pays-de-la-loire,Pays de la Loire
-    bretagne,Bretagne
-    nouvelle-aquitaine,Nouvelle-Aquitaine
-    occitanie,Occitanie
-    auvergne-rhone-alpes,Auvergne-Rhône-Alpes
-    provence-alpes-cote-d-azur,Provence-Alpes-Côte d'Azur
-    corse,Corse""".split("\n")
-    m_l = [reg_match.split(',') for reg_match in REGIONS]
-    matching = {region : id for id, region in m_l}
+    last_modified = datetime.datetime.now().strftime('%Y-%m-%dT%H:%M:%S.%f')
+    with open('../regions.csv') as fregions:
+        regions = [line.strip().split(',') for line in fregions]
+    matching = {region : id for id, region, _ in regions}
 
     dataset_url = 'https://www.data.gouv.fr/api/1/datasets/5ae791ac88ee386d490d3e0a/'
     response = open("dataset.json")
@@ -31,5 +16,6 @@
         if region in matching:
             id = matching[region]
             fname = "{}.json".format(id)
+            resource["last_modified"] = last_modified
             with open(fname, 'w') as f:
                 f.write(json.dumps(resource))
