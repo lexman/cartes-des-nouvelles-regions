@@ -5,7 +5,7 @@
 
     last_modified = datetime.datetime.now().strftime('%Y-%m-%dT%H:%M:%S.%f')
     with open('../regions.csv') as fregions:
-        regions = [line.strip().split(',') for line in fregions]
+        regions = [line.decode('utf8').strip().split(',') for line in fregions]
     matching = {region : id for id, region, _ in regions}
 
     dataset_url = 'https://www.data.gouv.fr/api/1/datasets/5ae791ac88ee386d490d3e0a/'
